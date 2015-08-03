@@ -57,6 +57,8 @@ namespace EAPowerTools
             switch (ItemName)
             {
                 case NEWLINE_MENU_ITEM:
+                    NotesCleaner cleaner = new NotesCleaner(Repository);
+                    cleaner.CleanUpNotesAndSave();
                     break;
                 case TRACE_MENU_ITEM:
                     TraceabilityRunner runner = new TraceabilityRunner(Repository);

@@ -3,14 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{220212F4-1330-4B2F-A798-F2F05F652B48}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D2EDA816-2D64-4D3B-8442-93B7C45A0257}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EAPowerTools", "EAPowerTools\EAPowerTools.csproj", "{B8F62779-C771-4626-B113-5C7225FB8438}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "InnoSetup", "InnoSetup", "{E78DF859-626B-4DB2-B019-F4BD62DA8F37}"
+	ProjectSection(SolutionItems) = preProject
+		SetupScript.iss = SetupScript.iss
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Builds", "Builds", "{A5B9ED99-3AF4-4BF1-AC88-8CAA8949DE03}"
+	ProjectSection(SolutionItems) = preProject
+		Output\EAPowerTools.exe = Output\EAPowerTools.exe
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,5 +34,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E78DF859-626B-4DB2-B019-F4BD62DA8F37} = {D2EDA816-2D64-4D3B-8442-93B7C45A0257}
+		{A5B9ED99-3AF4-4BF1-AC88-8CAA8949DE03} = {D2EDA816-2D64-4D3B-8442-93B7C45A0257}
 	EndGlobalSection
 EndGlobal
