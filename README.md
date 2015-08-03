@@ -9,10 +9,10 @@ project (until an installer is made) you will have to add a registry key and res
 
 ## REGISTRY
 - To setup the registry, we need to start Regedit and find the ```HKEY_CURRENT_USER\Software\Sparx Systems\EAAddins``` directory.
-- Add a new key with the name the same as your namespace. In our case it is CS_AddinFramework 
+- Add a new key with the name the same as your namespace. In our case it is EAPowerTools 
 - The value for the key should be your project name followed by your entry point. 
 - In our case the value would be: CS_AddinFramework.Main
 
 ## REGEDIT EXPORT
- [HKEY_CURRENT_USER\Software\Sparx Systems\EAAddins\CS_AddinFramework]
- @="CS_AddinFramework.Main"
+ [HKEY_CURRENT_USER\Software\Sparx Systems\EAAddins\EAPowerTools]
+ @="EAPowerTools.Main"
