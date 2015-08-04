@@ -1,6 +1,6 @@
 # EA Power Tools
 This project is a Visual Studio 2015 project that adds some new features to Sparx System EA. In order to use this
-project (until an installer is made) you will have to add a registry key and restart EA to see the addin appear. Basically the EA Adding process goes like this:
+project (until an installer is made) you will have to add a registry key and restart EA to see the addin appear. Basically the EA Addin process goes like this:
 
 1. Create and Sign an Assembly Implementing The Proper COM Methods
 2. Place It In The GAC
