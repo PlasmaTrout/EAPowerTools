@@ -54,6 +54,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
+    <Compile Include="Markdown.cs" />
+    <Compile Include="MarkdownOptions.cs" />
     <Compile Include="NotesCleaner.cs" />
     <Compile Include="PowerEditor.cs">
       <SubType>Form</SubType>

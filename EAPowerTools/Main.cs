@@ -67,6 +67,7 @@ namespace EAPowerTools
                     break;
                 case POWER_EDITOR:
                     PowerEditor editor = new PowerEditor();
+                    editor.LoadNotes(Repository);
                     editor.Show();
                     break;
             }

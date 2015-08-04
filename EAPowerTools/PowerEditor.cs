@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace EAPowerTools
 {
     public partial class PowerEditor : Form
@@ -15,6 +14,17 @@ namespace EAPowerTools
         public PowerEditor()
         {
             InitializeComponent();
+        }
+
+        public void LoadNotes(EA.Repository repo)
+        {
+            if(repo != null)
+            {
+                EA.Element element = repo.GetTreeSelectedObject();
+               
+            }
+
+           
         }
     }
 }
