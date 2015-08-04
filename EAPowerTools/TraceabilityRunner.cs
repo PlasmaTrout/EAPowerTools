@@ -25,13 +25,13 @@ namespace EAPowerTools
                 currentRepo.EnsureOutputVisible("EAPowerTools");
                 currentRepo.ClearOutput("EAPowerTools");
 
-                EA.Collection elements = currentRepo.GetTreeSelectedElements();
+                results = this.GetTemplate();
 
+                EA.Collection elements = currentRepo.GetTreeSelectedElements();
+               
                 if (elements.Count > 0)
                 {
                     EA.Element selectedElement = elements.GetAt(0);
-
-                    results = this.GetTemplate();
 
                     getConnections(selectedElement, "initial");
 
@@ -39,7 +39,19 @@ namespace EAPowerTools
                 }
                 else
                 {
-                    // Error Code Goes Here
+                    EA.Diagram diagram = currentRepo.GetCurrentDiagram();
+                    if(diagram != null)
+                    {
+                        EA.DiagramObject s = diagram.SelectedObjects.GetAt(0);
+                        EA.Element selectedElement = currentRepo.GetElementByID(s.ElementID);
+                        
+                        if(selectedElement != null)
+                        {
+                            getConnections(selectedElement, "initial");
+
+                            currentRepo.RunModelSearch("", "", "", results.ToString());
+                        }
+                    }
                 }
 
                
