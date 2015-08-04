@@ -42,6 +42,12 @@
             this.toolStripFontBox = new System.Windows.Forms.ToolStripComboBox();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStringFontButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBulletList = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripRemoveNewlines = new System.Windows.Forms.ToolStripButton();
+            this.toolStripBoldButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripItalicButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripUnderline = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -59,11 +65,17 @@
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripSaveButton,
             this.toolStripSeparator1,
+            this.toolStripBulletList,
             this.toolStripOrderedList,
             this.toolStripLIButton,
             this.toolStripSeparator2,
+            this.toolStripBoldButton,
+            this.toolStripItalicButton,
+            this.toolStripUnderline,
             this.toolStripFontBox,
-            this.toolStringFontButton});
+            this.toolStringFontButton,
+            this.toolStripSeparator3,
+            this.toolStripRemoveNewlines});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 25);
@@ -81,6 +93,7 @@
             // 
             // toolStripSeparator1
             // 
+            this.toolStripSeparator1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
@@ -147,6 +160,7 @@
             // 
             // toolStripSeparator2
             // 
+            this.toolStripSeparator2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
@@ -160,6 +174,64 @@
             this.toolStringFontButton.Text = "toolStripButton1";
             this.toolStringFontButton.ToolTipText = "Surround with font tag";
             this.toolStringFontButton.Click += new System.EventHandler(this.toolStringFontButton_Click);
+            // 
+            // toolStripBulletList
+            // 
+            this.toolStripBulletList.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripBulletList.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBulletList.Image")));
+            this.toolStripBulletList.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBulletList.Name = "toolStripBulletList";
+            this.toolStripBulletList.Size = new System.Drawing.Size(23, 22);
+            this.toolStripBulletList.Text = "toolStripButton1";
+            this.toolStripBulletList.ToolTipText = "Surround with unordered list";
+            this.toolStripBulletList.Click += new System.EventHandler(this.toolStripBulletList_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripRemoveNewlines
+            // 
+            this.toolStripRemoveNewlines.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripRemoveNewlines.Image = ((System.Drawing.Image)(resources.GetObject("toolStripRemoveNewlines.Image")));
+            this.toolStripRemoveNewlines.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripRemoveNewlines.Name = "toolStripRemoveNewlines";
+            this.toolStripRemoveNewlines.Size = new System.Drawing.Size(23, 22);
+            this.toolStripRemoveNewlines.Text = "toolStripButton1";
+            this.toolStripRemoveNewlines.ToolTipText = "Strip Newlines From Selection";
+            this.toolStripRemoveNewlines.Click += new System.EventHandler(this.toolStripRemoveNewlines_Click);
+            // 
+            // toolStripBoldButton
+            // 
+            this.toolStripBoldButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripBoldButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripBoldButton.Image")));
+            this.toolStripBoldButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripBoldButton.Name = "toolStripBoldButton";
+            this.toolStripBoldButton.Size = new System.Drawing.Size(23, 22);
+            this.toolStripBoldButton.Text = "toolStripButton1";
+            this.toolStripBoldButton.Click += new System.EventHandler(this.toolStripBoldButton_Click);
+            // 
+            // toolStripItalicButton
+            // 
+            this.toolStripItalicButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripItalicButton.Image = ((System.Drawing.Image)(resources.GetObject("toolStripItalicButton.Image")));
+            this.toolStripItalicButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripItalicButton.Name = "toolStripItalicButton";
+            this.toolStripItalicButton.Size = new System.Drawing.Size(23, 22);
+            this.toolStripItalicButton.Text = "toolStripButton1";
+            this.toolStripItalicButton.Click += new System.EventHandler(this.toolStripItalicButton_Click);
+            // 
+            // toolStripUnderline
+            // 
+            this.toolStripUnderline.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripUnderline.Image = ((System.Drawing.Image)(resources.GetObject("toolStripUnderline.Image")));
+            this.toolStripUnderline.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripUnderline.Name = "toolStripUnderline";
+            this.toolStripUnderline.Size = new System.Drawing.Size(23, 22);
+            this.toolStripUnderline.Text = "toolStripButton1";
+            this.toolStripUnderline.Click += new System.EventHandler(this.toolStripUnderline_Click);
             // 
             // PowerEditorControl
             // 
@@ -193,5 +265,11 @@
         private System.Windows.Forms.ToolStripComboBox toolStripFontBox;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton toolStringFontButton;
+        private System.Windows.Forms.ToolStripButton toolStripBulletList;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripButton toolStripRemoveNewlines;
+        private System.Windows.Forms.ToolStripButton toolStripBoldButton;
+        private System.Windows.Forms.ToolStripButton toolStripItalicButton;
+        private System.Windows.Forms.ToolStripButton toolStripUnderline;
     }
 }

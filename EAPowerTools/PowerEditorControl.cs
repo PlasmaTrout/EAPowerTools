@@ -62,8 +62,8 @@ namespace EAPowerTools
 
         private void ToolStripLIButton_Click(object sender, EventArgs e)
         {
-            this.richTextBox1.SelectedText = "<li>" + System.Environment.NewLine +
-                this.richTextBox1.SelectedText + System.Environment.NewLine + "</li>";
+            this.richTextBox1.SelectedText = System.Environment.NewLine + "<li>" +
+                this.richTextBox1.SelectedText + "</li>" + System.Environment.NewLine;
         }
 
         private void toolStringFontButton_Click(object sender, EventArgs e)
@@ -74,6 +74,32 @@ namespace EAPowerTools
                 this.richTextBox1.SelectedText = "<font face=\""+font+"\">" + System.Environment.NewLine +
               this.richTextBox1.SelectedText + System.Environment.NewLine + "</font>";
             }
+        }
+
+        private void toolStripBulletList_Click(object sender, EventArgs e)
+        {
+            this.richTextBox1.SelectedText = "<ul>" + System.Environment.NewLine +
+              this.richTextBox1.SelectedText + System.Environment.NewLine + "</ul>";
+        }
+
+        private void toolStripRemoveNewlines_Click(object sender, EventArgs e)
+        {
+            this.richTextBox1.SelectedText = this.richTextBox1.SelectedText.Replace("\n", " ");
+        }
+
+        private void toolStripBoldButton_Click(object sender, EventArgs e)
+        {
+            this.richTextBox1.SelectedText = "<b>" + this.richTextBox1.SelectedText + "</b>";
+        }
+
+        private void toolStripItalicButton_Click(object sender, EventArgs e)
+        {
+            this.richTextBox1.SelectedText = "<i>" + this.richTextBox1.SelectedText + "</i>";
+        }
+
+        private void toolStripUnderline_Click(object sender, EventArgs e)
+        {
+            this.richTextBox1.SelectedText = "<u>" + this.richTextBox1.SelectedText + "</u>";
         }
     }
 }
