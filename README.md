@@ -7,6 +7,11 @@ project (until an installer is made) you will have to add a registry key and res
 3. Add a registry entry so EA will load it.
 4. Profit
 
+There are two ways to install it:
+
+1. Get the latest build from [here](https://bitbucket.org/jdowning/ea-power-tools/downloads/EAPowerTools.exe)
+2. Manually build the project in VS run as administrator and then manually add the registry key.
+
 ## REGISTRY
 - To setup the registry, we need to start Regedit and find the ```HKEY_CURRENT_USER\Software\Sparx Systems\EAAddins``` directory.
 - Add a new key with the name the same as your namespace. In our case it is EAPowerTools 
