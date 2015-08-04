@@ -77,19 +77,22 @@ namespace EAPowerTools
             XElement element = results.Root.Element("Rows");
             XElement newRow = new XElement("Row");
 
+            AddField(newRow, "CLASSGUID", source.ElementGUID);
+            AddField(newRow, "CLASSTYPE", source.Type);
             AddField(newRow, "From", source.Name);
-            AddField(newRow,"FromType", source.Type);
+            AddField(newRow, "Object_Type", source.Type);
             AddField(newRow,"To", destination.Name);
-            AddField(newRow,"ToType", destination.Type);
+            AddField(newRow,"To_Object_Type", destination.Type);
             AddField(newRow,"Type", connector.Type);
             AddField(newRow,"Stereotype", connector.Stereotype);
             AddField(newRow,"Direction", connector.Direction);
             AddField(newRow,"Traversal", traversal);
+            AddField(newRow, "Object_ID", source.ElementID);
 
             element.Add(newRow);
         }
 
-        private void AddField(XElement row, String key, String value)
+        private void AddField(XElement row, String key, Object value)
         {
             XElement field = new XElement("Field");
             field.Add(new XAttribute("name",key));
@@ -103,14 +106,17 @@ namespace EAPowerTools
                 new XElement("ReportViewData",
                     new XAttribute("UID","TraceabilityReport"),
                     new XElement("Fields",
+                        new XElement("Field", new XAttribute("name", "CLASSGUID")),
+                        new XElement("Field", new XAttribute("name", "CLASSTYPE")),
                         new XElement("Field", new XAttribute("name", "From")),
-                        new XElement("Field", new XAttribute("name", "FromType")),
+                        new XElement("Field", new XAttribute("name", "Object_Type")),
                         new XElement("Field", new XAttribute("name", "To")),
-                        new XElement("Field", new XAttribute("name", "ToType")),
+                        new XElement("Field", new XAttribute("name", "To_Object_Type")),
                         new XElement("Field", new XAttribute("name", "Type")),
                         new XElement("Field", new XAttribute("name", "Stereotype")),
                         new XElement("Field", new XAttribute("name", "Direction")),
-                        new XElement("Field", new XAttribute("name", "Traversal"))
+                        new XElement("Field", new XAttribute("name", "Traversal")),
+                       new XElement("Field", new XAttribute("name", "Object_ID"))
                     ),
                     new XElement("Rows")
                 )

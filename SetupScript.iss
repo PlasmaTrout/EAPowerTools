@@ -30,8 +30,6 @@ Name: "english"; MessagesFile: "compiler:Default.isl"
 
 [Files]
 Source: "C:\Users\Jeff\Documents\Visual Studio 2015\Projects\EAPowerTools\EAPowerTools\bin\Debug\EAPowerTools.dll"; DestDir: "{app}"; StrongAssemblyName: "EAPowerTools, Version=1.0.0.0, PublicKeyToken=2f0bba969d577a7d, Culture=neutral, ProcessorArchitecture=MSIL"; Flags: gacinstall sharedfile
-Source: "C:\Users\Jeff\Documents\Visual Studio 2015\Projects\EAPowerTools\EAPowerTools\bin\Debug\EAPowerTools.pdb"; DestDir: "{app}"; Flags: ignoreversion
-; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Registry]
 Root: HKCU; Subkey: "Software\Sparx Systems\EAAddins\EAPowerTools"; ValueType: string; ValueData: "EAPowerTools.Main"; Flags: uninsdeletekey

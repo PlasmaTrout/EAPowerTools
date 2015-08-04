@@ -11,6 +11,7 @@ namespace EAPowerTools
         private const String BASE_MENU = "-&EA Power Tools";
         private const String NEWLINE_MENU_ITEM = "Remove Newlines From Notes";
         private const String TRACE_MENU_ITEM = "Traceability Report";
+        private const String POWER_EDITOR = "Power Editor";
 
         public String EA_Connect(EA.Repository repository)
         {
@@ -33,7 +34,7 @@ namespace EAPowerTools
                 case "":
                     return BASE_MENU;
                 case BASE_MENU:
-                    string[] items = { NEWLINE_MENU_ITEM, TRACE_MENU_ITEM };
+                    string[] items = { NEWLINE_MENU_ITEM, TRACE_MENU_ITEM, POWER_EDITOR };
                     return items;
             }
 
@@ -63,6 +64,10 @@ namespace EAPowerTools
                 case TRACE_MENU_ITEM:
                     TraceabilityRunner runner = new TraceabilityRunner(Repository);
                     runner.RunReportOnSelectedPBItem();
+                    break;
+                case POWER_EDITOR:
+                    PowerEditor editor = new PowerEditor();
+                    editor.Show();
                     break;
             }
         }
