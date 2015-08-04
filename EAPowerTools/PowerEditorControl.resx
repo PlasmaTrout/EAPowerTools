@@ -117,4 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>172, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripSaveButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABMSURBVDhPY6AK+Pbt239SMVQrBIAFgufA8Yf3H+EYWQxE
+        x0zYh2kIKQaAMMwQqHbSDQBhog1AxshqaGsAMXjUgEFpADkYqp0SwMAAAPRDDFPA2mtzAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <data name="toolStripOrderedList.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABaSURBVDhPzdCxDcAwCERRz8b4DETrBEcgcIE5KYWRfnPF
+        KxjvTRFJ6Qb0AUS02rFTDmgRMLCqBLr9C4QR6ZYn2oCWgKAi3fJEZk6AgVUl0M2BqCI5sI3NxnwAmKC2
+        mcq7QdoAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="toolStripLIButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACSSURBVDhPpZHBDYAgEASpjRb8Wg9vC7AWy+KLLvHi3nEE
+        iCZjdGGHM4bnKj/RQc55CVcQY5yiCl6LsgJsSCk1JaZ2uRS2s8LZiKGgOdF8chXsx9UIJJsSoISCCOQZ
+        az2UgMsswRpP4E4iRjsBst5fUALcWCLlEUrAEuCdbErM9yICW54WAJF42L0vbriCG04Syg2XkjyX8n3s
+        vQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStringFontButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADDSURBVDhPnZK7EYUgFEStjZwuzKmFWqjCnALIyUl5LrrM
+        BRGZ58wZuJ9d5LOdX04pPUBeMqldRedcVkqVsW+i8DiOOhf1q8EYUwwwygYKuABNWN8QhBBqESNiCqWY
+        fwcaA2ttaSCIZ2JSDbTWtQEjYs57cYwx7/veGoyYiZFHfG/j3svJl5gHPTRYEXvvxwarYsQPAzbOxBRJ
+        GgPevxTjLeDAuDIZGgD5TNGAq+SrlHkJcs0Z/EMxkCDZr/TGq8E6Kf8AISXSFO4pMNIAAAAASUVORK5C
+        YII=
+</value>
+  </data>
 </root>

@@ -13,6 +13,8 @@ namespace EAPowerTools
         private const String TRACE_MENU_ITEM = "Traceability Report";
         private const String POWER_EDITOR = "Power Editor";
 
+        PowerEditorControl control;
+
         public String EA_Connect(EA.Repository repository)
         {
             return "Connection To PowerTools Complete!";
@@ -66,9 +68,8 @@ namespace EAPowerTools
                     runner.RunReportOnSelectedPBItem();
                     break;
                 case POWER_EDITOR:
-                    PowerEditor editor = new PowerEditor();
-                    editor.LoadNotes(Repository);
-                    editor.Show();
+                    control = (PowerEditorControl) Repository.AddTab("Power Editor", "EAPowerTools.PowerEditorControl");
+                    control.LoadNotes(Repository);
                     break;
             }
         }
