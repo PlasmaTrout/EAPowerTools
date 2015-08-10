@@ -21,7 +21,7 @@ AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\{#MyAppName}
 DefaultGroupName={#MyAppName}
 AllowNoIcons=yes
-OutputBaseFilename=EAPowerTools
+OutputBaseFilename=EAPowerTools-Alpha1
 Compression=lzma
 SolidCompression=yes
 
