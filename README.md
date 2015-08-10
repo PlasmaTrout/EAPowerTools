@@ -9,7 +9,7 @@ project (until an installer is made) you will have to add a registry key and res
 
 There are two ways to install it:
 
-1. Get the latest installer from [here](https://bitbucket.org/jdowning/ea-power-tools/downloads/EAPowerTools.exe)
+1. Get the latest installer from [here](https://github.com/PlasmaTrout/EAPowerTools/blob/master/Output/EAPowerTools.exe)
 2. Manually build the project in VS run as administrator and then manually add the registry key.
 
 ## REGISTRY
