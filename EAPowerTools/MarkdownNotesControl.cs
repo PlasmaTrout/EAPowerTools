@@ -16,6 +16,7 @@ namespace EAPowerTools
         Markdown md;
         EA.Element element;
         EA.TaggedValue field;
+        EA.TaggedValue style;
 
         public string MarkdownText
         {
@@ -35,7 +36,7 @@ namespace EAPowerTools
             md = new Markdown();
 
             this.toolstripStyleBox.Items.Add(new MarkdownStyle("Bootstrap 3", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"));
-            this.toolstripStyleBox.Items.Add(new MarkdownStyle("Marx", "https://cdnjs.cloudflare.com/ajax/libs/marx/1.3.0/marx.min.css"));
+            //this.toolstripStyleBox.Items.Add(new MarkdownStyle("Highlight JS", "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/default.min.css"));
             this.toolstripStyleBox.SelectedIndex = 0;
         }
 
@@ -46,11 +47,20 @@ namespace EAPowerTools
             if (element != null)
             {
                 field = element.TaggedValuesEx.GetByName("Markdown");
+
                 if(field == null)
                 {
                     field = element.TaggedValuesEx.AddNew("Markdown", "TaggedValue");
                     field.Value = "<memo>";
                     field.Update();
+                }
+
+                style = element.TaggedValuesEx.GetByName("MarkdownStyle");
+                if(style == null)
+                {
+                    style = element.TaggedValuesEx.AddNew("MarkdownStyle", "TaggedValue");
+                    style.Value = ((MarkdownStyle)this.toolstripStyleBox.SelectedItem).CSSLink;
+                    style.Update();
                 }
                 
             }
@@ -67,9 +77,12 @@ namespace EAPowerTools
 
         public void UpdateWebBrowser()
         {
-            string styleLink = String.Format("<link rel=\"stylesheet\" href=\"{0}\">", ((MarkdownStyle)this.toolstripStyleBox.SelectedItem).CSSLink);
+            StringBuilder sb = new StringBuilder();
+            sb.Append(String.Format("<link rel=\"stylesheet\" href=\"{0}\">", ((MarkdownStyle)this.toolstripStyleBox.SelectedItem).CSSLink));
+            sb.Append(String.Format("<link rel=\"stylesheet\" href=\"{0}\">", "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/default.min.css"));
+            //sb.Append("<script src=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js\"></script>");
             this.webBrowser.DocumentText =
-                String.Format(Properties.Resources.HTMLHeader, styleLink, md.Transform(this.markdownTextBox.Text));
+                String.Format(Properties.Resources.HTMLHeader, sb.ToString(), md.Transform(this.markdownTextBox.Text));
         }
 
         private void toolStripSaveButton_Click(object sender, EventArgs e)
@@ -79,6 +92,9 @@ namespace EAPowerTools
                 field.Value = "<memo>";
                 field.Notes = this.markdownTextBox.Text;
                 field.Update();
+
+                style.Value = ((MarkdownStyle)this.toolstripStyleBox.SelectedItem).CSSLink;
+                style.Update();
             }
         }
 

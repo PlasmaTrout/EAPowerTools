@@ -13,9 +13,11 @@ namespace EAPowerTools
         private const string TRACE_MENU_ITEM = "Traceability Report";
         private const string POWER_EDITOR = "Power Editor";
         private const string MARKDOWN_EDITOR = "Markdown Notes";
+        private const string MARKDOWN_DOCKED = "Show Markdown Addin Window";
 
         PowerEditorControl control;
         MarkdownNotesControl mdownControl;
+        MarkdownDockedViewer mdownDocked;
 
         public String EA_Connect(EA.Repository repository)
         {
@@ -38,7 +40,7 @@ namespace EAPowerTools
                 case "":
                     return BASE_MENU;
                 case BASE_MENU:
-                    string[] items = { TRACE_MENU_ITEM, POWER_EDITOR, MARKDOWN_EDITOR };
+                    string[] items = { TRACE_MENU_ITEM, POWER_EDITOR, MARKDOWN_EDITOR, MARKDOWN_DOCKED };
                     return items;
             }
 
@@ -72,6 +74,10 @@ namespace EAPowerTools
                 case MARKDOWN_EDITOR:
                     mdownControl = (MarkdownNotesControl)Repository.AddTab("Markdown Editor", "EAPowerTools.MarkdownNotesControl");
                     mdownControl.LoadFromRepository(Repository);
+                    break;
+                case MARKDOWN_DOCKED:
+                    mdownDocked = (MarkdownDockedViewer)Repository.AddWindow("Markdown Notes", "EAPowerTools.MarkdownDockedViewer");
+                    mdownDocked.SetRepo(Repository);
                     break;
                 case POWER_EDITOR:
                     control = (PowerEditorControl) Repository.AddTab("Power Editor", "EAPowerTools.PowerEditorControl");
