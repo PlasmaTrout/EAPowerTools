@@ -8,12 +8,14 @@ namespace EAPowerTools
 {
     public class Main
     {
-        private const String BASE_MENU = "-&EA Power Tools";
-        private const String NEWLINE_MENU_ITEM = "Remove Newlines From Notes";
-        private const String TRACE_MENU_ITEM = "Traceability Report";
-        private const String POWER_EDITOR = "Power Editor";
+        private const string BASE_MENU = "-&EA Power Tools";
+        private const string NEWLINE_MENU_ITEM = "Remove Newlines From Notes";
+        private const string TRACE_MENU_ITEM = "Traceability Report";
+        private const string POWER_EDITOR = "Power Editor";
+        private const string MARKDOWN_EDITOR = "Markdown Notes";
 
         PowerEditorControl control;
+        MarkdownNotesControl mdownControl;
 
         public String EA_Connect(EA.Repository repository)
         {
@@ -36,7 +38,7 @@ namespace EAPowerTools
                 case "":
                     return BASE_MENU;
                 case BASE_MENU:
-                    string[] items = { TRACE_MENU_ITEM, POWER_EDITOR };
+                    string[] items = { TRACE_MENU_ITEM, POWER_EDITOR, MARKDOWN_EDITOR };
                     return items;
             }
 
@@ -66,6 +68,10 @@ namespace EAPowerTools
                 case TRACE_MENU_ITEM:
                     TraceabilityRunner runner = new TraceabilityRunner(Repository);
                     runner.RunReportOnSelectedPBItem();
+                    break;
+                case MARKDOWN_EDITOR:
+                    mdownControl = (MarkdownNotesControl)Repository.AddTab("Markdown Editor", "EAPowerTools.MarkdownNotesControl");
+                    mdownControl.LoadFromRepository(Repository);
                     break;
                 case POWER_EDITOR:
                     control = (PowerEditorControl) Repository.AddTab("Power Editor", "EAPowerTools.PowerEditorControl");

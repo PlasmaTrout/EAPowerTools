@@ -34,14 +34,13 @@
             this.toolStripSaveButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripPreviewButton = new System.Windows.Forms.ToolStripButton();
-            this.previewTab = new System.Windows.Forms.TabControl();
-            this.tabEditor = new System.Windows.Forms.TabPage();
-            this.tabPreview = new System.Windows.Forms.TabPage();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
             this.toolStrip1.SuspendLayout();
-            this.previewTab.SuspendLayout();
-            this.tabEditor.SuspendLayout();
-            this.tabPreview.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -60,11 +59,11 @@
             // 
             this.markdownTextBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this.markdownTextBox.Font = new System.Drawing.Font("Cambria", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.markdownTextBox.Location = new System.Drawing.Point(3, 3);
+            this.markdownTextBox.Location = new System.Drawing.Point(0, 0);
             this.markdownTextBox.Name = "markdownTextBox";
-            this.markdownTextBox.Size = new System.Drawing.Size(786, 543);
+            this.markdownTextBox.Size = new System.Drawing.Size(400, 575);
             this.markdownTextBox.TabIndex = 1;
-            this.markdownTextBox.Text = resources.GetString("markdownTextBox.Text");
+            this.markdownTextBox.Text = "";
             this.markdownTextBox.TextChanged += new System.EventHandler(this.markdownTextBox_TextChanged);
             // 
             // toolStripSaveButton
@@ -75,6 +74,7 @@
             this.toolStripSaveButton.Name = "toolStripSaveButton";
             this.toolStripSaveButton.Size = new System.Drawing.Size(23, 22);
             this.toolStripSaveButton.Text = "toolStripButton1";
+            this.toolStripSaveButton.Click += new System.EventHandler(this.toolStripSaveButton_Click);
             // 
             // toolStripSeparator1
             // 
@@ -91,62 +91,46 @@
             this.toolStripPreviewButton.Size = new System.Drawing.Size(23, 22);
             this.toolStripPreviewButton.Text = "toolStripButton1";
             // 
-            // previewTab
+            // splitContainer1
             // 
-            this.previewTab.Controls.Add(this.tabEditor);
-            this.previewTab.Controls.Add(this.tabPreview);
-            this.previewTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.previewTab.Location = new System.Drawing.Point(0, 25);
-            this.previewTab.Name = "previewTab";
-            this.previewTab.SelectedIndex = 0;
-            this.previewTab.Size = new System.Drawing.Size(800, 575);
-            this.previewTab.TabIndex = 2;
-            this.previewTab.SelectedIndexChanged += new System.EventHandler(this.markdownTextBox_TextChanged);
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 25);
+            this.splitContainer1.Name = "splitContainer1";
             // 
-            // tabEditor
+            // splitContainer1.Panel1
             // 
-            this.tabEditor.Controls.Add(this.markdownTextBox);
-            this.tabEditor.Location = new System.Drawing.Point(4, 22);
-            this.tabEditor.Name = "tabEditor";
-            this.tabEditor.Padding = new System.Windows.Forms.Padding(3);
-            this.tabEditor.Size = new System.Drawing.Size(792, 549);
-            this.tabEditor.TabIndex = 0;
-            this.tabEditor.Text = "Editor";
-            this.tabEditor.UseVisualStyleBackColor = true;
+            this.splitContainer1.Panel1.Controls.Add(this.markdownTextBox);
             // 
-            // tabPreview
+            // splitContainer1.Panel2
             // 
-            this.tabPreview.Controls.Add(this.webBrowser);
-            this.tabPreview.Location = new System.Drawing.Point(4, 22);
-            this.tabPreview.Name = "tabPreview";
-            this.tabPreview.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPreview.Size = new System.Drawing.Size(792, 549);
-            this.tabPreview.TabIndex = 1;
-            this.tabPreview.Text = "Preview";
-            this.tabPreview.UseVisualStyleBackColor = true;
+            this.splitContainer1.Panel2.Controls.Add(this.webBrowser);
+            this.splitContainer1.Size = new System.Drawing.Size(800, 575);
+            this.splitContainer1.SplitterDistance = 400;
+            this.splitContainer1.TabIndex = 2;
             // 
             // webBrowser
             // 
             this.webBrowser.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.webBrowser.Location = new System.Drawing.Point(3, 3);
+            this.webBrowser.Location = new System.Drawing.Point(0, 0);
             this.webBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.webBrowser.Name = "webBrowser";
-            this.webBrowser.Size = new System.Drawing.Size(786, 543);
+            this.webBrowser.Size = new System.Drawing.Size(396, 575);
             this.webBrowser.TabIndex = 0;
             // 
             // MarkdownNotesControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.previewTab);
+            this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.toolStrip1);
             this.Name = "MarkdownNotesControl";
             this.Size = new System.Drawing.Size(800, 600);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
-            this.previewTab.ResumeLayout(false);
-            this.tabEditor.ResumeLayout(false);
-            this.tabPreview.ResumeLayout(false);
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -159,9 +143,7 @@
         private System.Windows.Forms.RichTextBox markdownTextBox;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripButton toolStripPreviewButton;
-        private System.Windows.Forms.TabControl previewTab;
-        private System.Windows.Forms.TabPage tabEditor;
-        private System.Windows.Forms.TabPage tabPreview;
+        private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.WebBrowser webBrowser;
     }
 }

@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EAHelper.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="Markdown.cs" />
     <Compile Include="MarkdownNotesControl.cs">

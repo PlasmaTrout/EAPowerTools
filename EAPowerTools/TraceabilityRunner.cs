@@ -27,34 +27,11 @@ namespace EAPowerTools
 
                 results = this.GetTemplate();
 
-                EA.Collection elements = currentRepo.GetTreeSelectedElements();
-               
-                if (elements.Count > 0)
-                {
-                    EA.Element selectedElement = elements.GetAt(0);
+                EA.Element selectedElement = EAHelper.GetCurrentElement(currentRepo);
 
-                    getConnections(selectedElement, "initial");
+                getConnections(selectedElement, "initial");
 
-                    currentRepo.RunModelSearch("", "", "", results.ToString());
-                }
-                else
-                {
-                    EA.Diagram diagram = currentRepo.GetCurrentDiagram();
-                    if(diagram != null)
-                    {
-                        EA.DiagramObject s = diagram.SelectedObjects.GetAt(0);
-                        EA.Element selectedElement = currentRepo.GetElementByID(s.ElementID);
-                        
-                        if(selectedElement != null)
-                        {
-                            getConnections(selectedElement, "initial");
-
-                            currentRepo.RunModelSearch("", "", "", results.ToString());
-                        }
-                    }
-                }
-
-               
+                currentRepo.RunModelSearch("", "", "", results.ToString());               
             }
         }
 
