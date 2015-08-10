@@ -10,8 +10,7 @@ namespace EAPowerToolsUnitTests
         [TestMethod]
         public void TestPowerEditor()
         {
-            PowerEditor editor = new PowerEditor();
-            editor.ShowDialog();
+           
         }
     }
 }
