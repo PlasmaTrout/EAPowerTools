@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EAPowerTools;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,17 @@ namespace EAPowerToolsFormTests
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new PowerEditor().Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MarkdownTest m = new MarkdownTest();
+            m.Show();
         }
     }
 }

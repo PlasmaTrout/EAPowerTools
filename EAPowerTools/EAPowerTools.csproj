@@ -55,6 +55,12 @@
   <ItemGroup>
     <Compile Include="Main.cs" />
     <Compile Include="Markdown.cs" />
+    <Compile Include="MarkdownNotesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MarkdownNotesControl.Designer.cs">
+      <DependentUpon>MarkdownNotesControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="MarkdownOptions.cs" />
     <Compile Include="NotesCleaner.cs" />
     <Compile Include="PowerEditor.cs">
@@ -81,6 +87,9 @@
     <None Include="EAPowerTools.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="MarkdownNotesControl.resx">
+      <DependentUpon>MarkdownNotesControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="PowerEditor.resx">
       <DependentUpon>PowerEditor.cs</DependentUpon>
     </EmbeddedResource>

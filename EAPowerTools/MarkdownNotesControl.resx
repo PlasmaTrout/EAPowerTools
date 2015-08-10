@@ -117,7 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="TestMarkdownNote" xml:space="preserve">
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="toolStripSaveButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABMSURBVDhPY6AK+Pbt239SMVQrBIAFgufA8Yf3H+EYWQxE
+        x0zYh2kIKQaAMMwQqHbSDQBhog1AxshqaGsAMXjUgEFpADkYqp0SwMAAAPRDDFPA2mtzAAAAAElFTkSu
+        QmCC
+</value>
+  </data>
+  <data name="toolStripPreviewButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACkSURBVDhPY/j27dt/QpgBHwApcHJywomJNuDD+49wfP78
+        hf9Pnzwj34C+vn6wITAD8GG4ASAbm5tb/t+6eRtuEMwAEI0NoxiQnJQMtjkiIuL/rp27UAyAGQgTQ5aD
+        G7B+3XqwBMgFIMMqKipxGgDDKAbgwkQZQAijGwCjQXIMJ0+e/J+Xm4eiCB/GcMGAGACj4QYgm0oKBhsA
+        IijB0AQ9YICBAQDHR3fvaqILfAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="markdownTextBox.Text" xml:space="preserve">
     <value># Dillinger
 
 Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.
@@ -241,6 +262,7 @@ MIT
 - [@tjholowaychuk](http://twitter.com/tjholowaychuk)
 - [express](http://expressjs.com)
 - [AngularJS](http://angularjs.org)
-- [Gulp](http://gulpjs.com)</value>
+- [Gulp](http://gulpjs.com)
+</value>
   </data>
 </root>
