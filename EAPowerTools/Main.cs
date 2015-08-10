@@ -36,7 +36,7 @@ namespace EAPowerTools
                 case "":
                     return BASE_MENU;
                 case BASE_MENU:
-                    string[] items = { NEWLINE_MENU_ITEM, TRACE_MENU_ITEM, POWER_EDITOR };
+                    string[] items = { TRACE_MENU_ITEM, POWER_EDITOR };
                     return items;
             }
 
