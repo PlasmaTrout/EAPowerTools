@@ -61,6 +61,15 @@ namespace EAPowerToolsFormTests.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;&lt;html&gt;{0}&lt;/html&gt;.
+        /// </summary>
+        internal static string HTMLHeader {
+            get {
+                return ResourceManager.GetString("HTMLHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to # Dillinger
         ///
         ///Dillinger is a cloud-enabled, mobile-ready, offline-storage, AngularJS powered HTML5 Markdown editor.

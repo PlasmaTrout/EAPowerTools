@@ -16,6 +16,12 @@ namespace EAPowerToolsFormTests
         {
             InitializeComponent();
             this.markdownNotesControl1.MarkdownText = Properties.Resources.TestMarkdownNote;
+            
+        }
+
+        private void MarkdownTest_Load(object sender, EventArgs e)
+        {
+            this.markdownNotesControl1.UpdateWebBrowser();
         }
     }
 }

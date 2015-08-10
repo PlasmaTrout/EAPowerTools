@@ -59,5 +59,14 @@ namespace EAPowerTools.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;{0}&lt;/head&gt;&lt;body&gt;{1}&lt;/body&gt;&lt;/html&gt;.
+        /// </summary>
+        internal static string HTMLHeader {
+            get {
+                return ResourceManager.GetString("HTMLHeader", resourceCulture);
+            }
+        }
     }
 }

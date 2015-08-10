@@ -63,6 +63,7 @@
       <DependentUpon>MarkdownNotesControl.cs</DependentUpon>
     </Compile>
     <Compile Include="MarkdownOptions.cs" />
+    <Compile Include="MarkdownStyle.cs" />
     <Compile Include="NotesCleaner.cs" />
     <Compile Include="PowerEditor.cs">
       <SubType>Form</SubType>

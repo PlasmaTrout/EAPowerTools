@@ -35,6 +35,7 @@
             // 
             this.markdownNotesControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.markdownNotesControl1.Location = new System.Drawing.Point(0, 0);
+            this.markdownNotesControl1.MarkdownText = "";
             this.markdownNotesControl1.Name = "markdownNotesControl1";
             this.markdownNotesControl1.Size = new System.Drawing.Size(858, 619);
             this.markdownNotesControl1.TabIndex = 0;
@@ -47,6 +48,7 @@
             this.Controls.Add(this.markdownNotesControl1);
             this.Name = "MarkdownTest";
             this.Text = "MarkdownTest";
+            this.Load += new System.EventHandler(this.MarkdownTest_Load);
             this.ResumeLayout(false);
 
         }
