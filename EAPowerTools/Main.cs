@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EA;
 
 namespace EAPowerTools
 {
-    public class Main
+    public class Main : EAAddinFramework.EAAddinBase
     {
         private const string BASE_MENU = "-&EA Power Tools";
         private const string NEWLINE_MENU_ITEM = "Remove Newlines From Notes";
@@ -19,7 +20,7 @@ namespace EAPowerTools
         MarkdownNotesControl mdownControl;
         MarkdownDockedViewer mdownDocked;
 
-        public String EA_Connect(EA.Repository repository)
+        public override String EA_Connect(EA.Repository repository)
         {
             return "Connection To PowerTools Complete!";
         }
@@ -33,7 +34,7 @@ namespace EAPowerTools
         /// <param name="location"></param>
         /// <param name="menuName">The menu item that is currently being loaded</param>
         /// <returns></returns>
-        public object EA_GetMenuItems(EA.Repository repository,string location, string menuName)
+        public override object EA_GetMenuItems(EA.Repository repository,string location, string menuName)
         {
             switch (menuName)
             {
@@ -48,7 +49,7 @@ namespace EAPowerTools
         }
 
 
-        public void EA_GetMenuState(EA.Repository Repository, string Location, string MenuName, string ItemName, ref bool IsEnabled, ref bool IsChecked)
+        public override void EA_GetMenuState(EA.Repository Repository, string Location, string MenuName, string ItemName, ref bool IsEnabled, ref bool IsChecked)
         {
             if (IsProjectOpen(Repository))
             {
@@ -59,7 +60,7 @@ namespace EAPowerTools
                 IsEnabled = false;
         }
 
-        public void EA_MenuClick(EA.Repository Repository, string Location, string MenuName, string ItemName)
+        public override void EA_MenuClick(EA.Repository Repository, string Location, string MenuName, string ItemName)
         {
             switch (ItemName)
             {
@@ -86,7 +87,7 @@ namespace EAPowerTools
             }
         }
 
-        bool IsProjectOpen(EA.Repository repository)
+        protected override bool IsProjectOpen(EA.Repository repository)
         {
             try
             {
@@ -97,6 +98,28 @@ namespace EAPowerTools
             {
                 return false;
             }
+        }
+
+        public override void EA_OnContextItemChanged(Repository Repository, string GUID, ObjectType ot)
+        {
+            Repository.EnsureOutputVisible("System");
+
+            if (ot == ObjectType.otElement)
+            {
+                Repository.WriteOutput("System", "Element Changed!", 1);
+                if(mdownDocked != null)
+                {
+                    mdownDocked.RefreshWebBrowser();
+                }
+
+                if(mdownControl != null)
+                {
+                    mdownControl.LoadFromRepository(Repository);
+                    mdownControl.UpdateWebBrowser();
+                }
+            }
+
+            base.EA_OnContextItemChanged(Repository, GUID, ot);
         }
     }
 }

@@ -37,7 +37,7 @@ namespace EAPowerTools
             RefreshWebBrowser();
         } 
 
-        private void RefreshWebBrowser()
+        public void RefreshWebBrowser()
         {
             element = EAHelper.GetCurrentElement(currentRepo);
 
@@ -90,6 +90,7 @@ namespace EAPowerTools
             {
                 StreamWriter writer = new StreamWriter(fs);
                 writer.Write(Properties.Resources.HTMLHeader, sb.ToString(), s, md.Transform(field.Notes));
+                writer.Flush();
             }
 
 

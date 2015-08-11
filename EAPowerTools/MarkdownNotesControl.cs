@@ -109,6 +109,7 @@ namespace EAPowerTools
             {
                 StreamWriter writer = new StreamWriter(fs);
                 writer.Write(Properties.Resources.HTMLHeader, sb.ToString(),skin, md.Transform(this.markdownTextBox.Text));
+                writer.Flush();
             }
 
 
