@@ -25,6 +25,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EAPowerToolsFormTests", "EA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EAPowerToolsUnitTests", "EAPowerToolsUnitTests\EAPowerToolsUnitTests.csproj", "{75C0A466-EBCA-4350-A9B3-58B651167C59}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Screenshots", "Screenshots", "{CF4A57A6-1644-49A1-8306-822297DDB623}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\..\Pictures\EA Power Tools\Capture1.PNG = ..\..\..\..\Pictures\EA Power Tools\Capture1.PNG
+		..\..\..\..\Pictures\EA Power Tools\Capture2.PNG = ..\..\..\..\Pictures\EA Power Tools\Capture2.PNG
+		..\..\..\..\Pictures\EA Power Tools\Capture3.PNG = ..\..\..\..\Pictures\EA Power Tools\Capture3.PNG
+		..\..\..\..\Pictures\EA Power Tools\Capture4.PNG = ..\..\..\..\Pictures\EA Power Tools\Capture4.PNG
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -92,5 +100,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E78DF859-626B-4DB2-B019-F4BD62DA8F37} = {D2EDA816-2D64-4D3B-8442-93B7C45A0257}
 		{A5B9ED99-3AF4-4BF1-AC88-8CAA8949DE03} = {D2EDA816-2D64-4D3B-8442-93B7C45A0257}
+		{CF4A57A6-1644-49A1-8306-822297DDB623} = {D2EDA816-2D64-4D3B-8442-93B7C45A0257}
 	EndGlobalSection
 EndGlobal
