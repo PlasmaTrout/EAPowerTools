@@ -18,6 +18,7 @@ namespace EAPowerTools
         EA.Element element;
         EA.TaggedValue field;
         EA.TaggedValue style;
+        EA.TaggedValue skin;
 
         public string MarkdownText
         {
@@ -64,7 +65,14 @@ namespace EAPowerTools
                     style.Value = ((MarkdownStyle)this.toolstripStyleBox.SelectedItem).CSSLink;
                     style.Update();
                 }
-                
+
+                skin = element.TaggedValuesEx.GetByName("PrettifySkin");
+                if (skin == null)
+                {
+                    skin = element.TaggedValuesEx.AddNew("PrettifySkin", "TaggedValue");
+                    skin.Value = this.toolStripSkinBox.SelectedItem.ToString();
+                    skin.Update();
+                }
             }
 
             this.markdownTextBox.Text = field.Notes;
@@ -119,6 +127,9 @@ namespace EAPowerTools
 
                 style.Value = ((MarkdownStyle)this.toolstripStyleBox.SelectedItem).CSSLink;
                 style.Update();
+
+                skin.Value = this.toolStripSkinBox.SelectedItem.ToString();
+                skin.Update();
             }
         }
 

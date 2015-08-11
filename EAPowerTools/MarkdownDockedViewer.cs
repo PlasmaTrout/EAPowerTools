@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MarkdownSharp;
+using System.IO;
 
 namespace EAPowerTools
 {
@@ -15,6 +16,10 @@ namespace EAPowerTools
     {
         private EA.Repository currentRepo;
         private Markdown md;
+        EA.Element element;
+        EA.TaggedValue field;
+        EA.TaggedValue style;
+        EA.TaggedValue skin;
 
         public MarkdownDockedViewer()
         {
@@ -34,21 +39,62 @@ namespace EAPowerTools
 
         private void RefreshWebBrowser()
         {
-            EA.Element element = EAHelper.GetCurrentElement(currentRepo);
+            element = EAHelper.GetCurrentElement(currentRepo);
+
             if (element != null)
             {
-                EA.TaggedValue tv = (EA.TaggedValue) element.TaggedValuesEx.GetByName("Markdown");
-                EA.TaggedValue st = (EA.TaggedValue)element.TaggedValuesEx.GetByName("MarkdownStyle");
+                field = element.TaggedValuesEx.GetByName("Markdown");
 
-                string styleLink = String.Format("<link rel=\"stylesheet\" href=\"{0}\">", st.Value);
-
-                if (tv != null)
+                if (field == null)
                 {
-                    this.webBrowser1.DocumentText =
-                        String.Format(Properties.Resources.HTMLHeader, styleLink, md.Transform(tv.Notes));
+                    field = element.TaggedValuesEx.AddNew("Markdown", "TaggedValue");
+                    field.Value = "<memo>";
+                    field.Update();
+                }
+
+                style = element.TaggedValuesEx.GetByName("MarkdownStyle");
+                if (style == null)
+                {
+                    style = element.TaggedValuesEx.AddNew("MarkdownStyle", "TaggedValue");
+                    style.Value = "";
+                    style.Update();
+                }
+
+                skin = element.TaggedValuesEx.GetByName("PrettifySkin");
+                if (skin == null)
+                {
+                    skin = element.TaggedValuesEx.AddNew("PrettifySkin", "TaggedValue");
+                    skin.Value = "sunburst";
+                    skin.Update();
                 }
             }
+
+            StringBuilder sb = new StringBuilder();
+            sb.Append(String.Format("<link rel=\"stylesheet\" href=\"{0}\">", style.Value));
            
+
+            string s = skin.Value;
+
+            if (s != "default")
+            {
+                s = "?skin=" + s;
+            }
+            else
+            {
+                s = "";
+            }
+
+            string file = Path.GetTempPath() + "documentation.html";
+
+            using (FileStream fs = File.Open(file, FileMode.Create))
+            {
+                StreamWriter writer = new StreamWriter(fs);
+                writer.Write(Properties.Resources.HTMLHeader, sb.ToString(), s, md.Transform(field.Notes));
+            }
+
+
+            this.webBrowser1.Navigate(file);
+
         }
     }
 }
