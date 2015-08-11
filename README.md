@@ -13,10 +13,13 @@ There are two ways to install it:
 2. Manually build the project in VS run as administrator and then manually add the registry key.
 
 ## How To Use It
-Right now as I am hacking on it, there are two main features that were needed first.
+Right now as I am hacking on it, there are a few main features that were needed first.
 
 1. A traceability report view that could be exported to excel
 1. A better way to edit pasted in documentation by stripping spaces and formatting lists and paragraphs using html markup.
+2. A markdown enabled comment section, independent of the notes column.
+3. A markdown editor for the new comment types.
+4. A markdown addin dockable window to help show the markdown comments in a convienient way.
 
 ### Traceability Report
 To use the traceability report simply click on the element in either the project browser or the diagram itself. Right click and choose
@@ -36,7 +39,13 @@ The power editor is an html markup editor that allows you access to the markup t
 have tools that will surround pasted in material with ```<ol>``` and ```<li>``` tags along with much more.
 
 EA only supports a limited markdown capacity. So adding things like divs and images will not work. However spans and paragraphs do have limited functionality.
-Unfortunately OL types don't function in the noted so having roman numerals or lettered lists is currently not possible.
+Unfortunately OL types don't function in the notes field so having roman numerals or lettered lists is currently not possible.
+
+### Markdown Comments
+I am slowly adapting EA to use markdown output as a generation mechanism so that I can generate class documentation for API's in a github/bitbucket centric way. The first step, however, was to add a markdown comments section to each element. I do this by creating a taggedvalue for Markdown and MarkdownStyle. Where style is the cdn url of the stylesheet you wish to use when viewing the comments.
+
+To edit the markdown comments use ```Extensions -> EA Power Tools -> Markdown Editor``` and you will get a down and dirty editor (which is still being worked on). If you just want to see what comments exist for an element, you can add the Addins Window to your dock somewhere and then go ```Extensions -> EA Power Tools -> Markdown Addin Windows``` and it will show up.
+
 
 ## REGISTRY
 - To setup the registry, we need to start Regedit and find the ```HKEY_CURRENT_USER\Software\Sparx Systems\EAAddins``` directory.
