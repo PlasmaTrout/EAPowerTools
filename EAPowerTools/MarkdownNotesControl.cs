@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MarkdownSharp;
+using System.IO;
 
 namespace EAPowerTools
 {
@@ -38,6 +39,7 @@ namespace EAPowerTools
             this.toolstripStyleBox.Items.Add(new MarkdownStyle("Bootstrap 3", "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"));
             //this.toolstripStyleBox.Items.Add(new MarkdownStyle("Highlight JS", "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/default.min.css"));
             this.toolstripStyleBox.SelectedIndex = 0;
+            this.toolStripSkinBox.SelectedIndex = 1;
         }
 
         public void LoadFromRepository(EA.Repository repository)
@@ -66,12 +68,12 @@ namespace EAPowerTools
             }
 
             this.markdownTextBox.Text = field.Notes;
-            UpdateWebBrowser();
+            //UpdateWebBrowser();
         }
 
         private void markdownTextBox_TextChanged(object sender, EventArgs e)
         {
-            UpdateWebBrowser();
+            //UpdateWebBrowser();
 
         }
 
@@ -81,8 +83,30 @@ namespace EAPowerTools
             sb.Append(String.Format("<link rel=\"stylesheet\" href=\"{0}\">", ((MarkdownStyle)this.toolstripStyleBox.SelectedItem).CSSLink));
             sb.Append(String.Format("<link rel=\"stylesheet\" href=\"{0}\">", "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/styles/default.min.css"));
             //sb.Append("<script src=\"https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js\"></script>");
-            this.webBrowser.DocumentText =
-                String.Format(Properties.Resources.HTMLHeader, sb.ToString(), md.Transform(this.markdownTextBox.Text));
+
+            string skin = this.toolStripSkinBox.SelectedItem != null ? this.toolStripSkinBox.SelectedItem.ToString() : "default";
+
+            if (skin != "default")
+            {
+                skin = "?skin=" + skin;
+            }
+            else
+            {
+                skin = "";
+            }
+
+            string file = Path.GetTempPath() + "documentation.html";
+
+            using (FileStream fs = File.Open(file, FileMode.Create))
+            {
+                StreamWriter writer = new StreamWriter(fs);
+                writer.Write(Properties.Resources.HTMLHeader, sb.ToString(),skin, md.Transform(this.markdownTextBox.Text));
+            }
+
+
+            this.webBrowser.Navigate(file);
+            //this.webBrowser.DocumentText =
+            //    String.Format(Properties.Resources.HTMLHeader, sb.ToString(), md.Transform(this.markdownTextBox.Text));
         }
 
         private void toolStripSaveButton_Click(object sender, EventArgs e)

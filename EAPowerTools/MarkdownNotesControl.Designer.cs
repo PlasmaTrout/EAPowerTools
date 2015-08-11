@@ -37,6 +37,7 @@
             this.markdownTextBox = new System.Windows.Forms.RichTextBox();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.webBrowser = new System.Windows.Forms.WebBrowser();
+            this.toolStripSkinBox = new System.Windows.Forms.ToolStripComboBox();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -50,6 +51,7 @@
             this.toolStripSaveButton,
             this.toolStripSeparator1,
             this.toolstripStyleBox,
+            this.toolStripSkinBox,
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
@@ -126,6 +128,17 @@
             this.webBrowser.Size = new System.Drawing.Size(396, 575);
             this.webBrowser.TabIndex = 0;
             // 
+            // toolStripSkinBox
+            // 
+            this.toolStripSkinBox.Items.AddRange(new object[] {
+            "default",
+            "desert",
+            "sunburst",
+            "sons-of-obsidian",
+            "doxy"});
+            this.toolStripSkinBox.Name = "toolStripSkinBox";
+            this.toolStripSkinBox.Size = new System.Drawing.Size(121, 25);
+            // 
             // MarkdownNotesControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -156,5 +169,6 @@
         private System.Windows.Forms.WebBrowser webBrowser;
         private System.Windows.Forms.ToolStripComboBox toolstripStyleBox;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripComboBox toolStripSkinBox;
     }
 }

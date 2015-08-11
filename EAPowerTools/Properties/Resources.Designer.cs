@@ -61,7 +61,8 @@ namespace EAPowerTools.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;{0}&lt;/head&gt;&lt;body&gt;{1}&lt;/body&gt;&lt;/html&gt;.
+        ///   Looks up a localized string similar to &lt;!DOCTYPE html&gt;&lt;html&gt;&lt;head&gt;{0}&lt;script src=&quot;https://google-code-prettify.googlecode.com/svn/loader/run_prettify.js{1}&quot;&gt;&lt;/script&gt;
+        ///&lt;/head&gt;&lt;body&gt;{2}&lt;/body&gt;&lt;/html&gt;.
         /// </summary>
         internal static string HTMLHeader {
             get {

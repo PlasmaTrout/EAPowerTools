@@ -21,7 +21,7 @@ namespace EAPowerToolsFormTests
 
         private void MarkdownTest_Load(object sender, EventArgs e)
         {
-            this.markdownNotesControl1.UpdateWebBrowser();
+            //this.markdownNotesControl1.UpdateWebBrowser();
         }
     }
 }

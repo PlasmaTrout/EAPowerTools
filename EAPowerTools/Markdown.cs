@@ -1273,7 +1273,7 @@ namespace MarkdownSharp
             codeBlock = EncodeCode(Outdent(codeBlock));
             codeBlock = _newlinesLeadingTrailing.Replace(codeBlock, "");
 
-            return string.Concat("\n\n<pre><code>\n", codeBlock, "\n</code></pre>\n\n");
+            return string.Concat("\n\n<pre class=\"prettyprint\"><code>\n", codeBlock, "\n</code></pre>\n\n");
         }
 
         private static Regex _githubCodeBlock = new Regex(@"(?<!\\)(`{3,}) *(\S+)? *\n([\s\S]+?)\s*\1 *(?:\n+|$)", RegexOptions.Compiled);
@@ -1292,7 +1292,7 @@ namespace MarkdownSharp
             codeBlock = EncodeCode(codeBlock);
             codeBlock = _newlinesLeadingTrailing.Replace(codeBlock, "");
 
-            return string.Concat("\n\n<pre><code class=\"language-", typeBlock, "\">", codeBlock,
+            return string.Concat("\n\n<pre class=\"prettyprint\"><code class=\"language-", typeBlock, "\">", codeBlock,
                 "\n</code></pre>\n\n");
 
         }
