@@ -53,6 +53,8 @@ Unfortunately OL types don't function in the notes field so having roman numeral
 
 I am slowly adapting EA to use markdown output as a generation mechanism so that I can generate class documentation for API's in a github/bitbucket centric way. The first step, however, was to add a markdown comments section to each element. I do this by creating a taggedvalue for Markdown and MarkdownStyle. Where style is the cdn url of the stylesheet you wish to use when viewing the comments.
 
+![Traceability Report](Screenshots/Capture5.PNG)
+
 To edit the markdown comments use ```Extensions -> EA Power Tools -> Markdown Editor``` and you will get a down and dirty editor (which is still being worked on). If you just want to see what comments exist for an element, you can add the Addins Window to your dock somewhere and then go ```Extensions -> EA Power Tools -> Markdown Addin Windows``` and it will show up.
 
 ![Traceability Report](Screenshots/Capture4.PNG)
