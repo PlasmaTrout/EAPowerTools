@@ -39,7 +39,7 @@ The power editor is an html markup editor that allows you access to the markup t
 have tools that will surround pasted in material with ```<ol>``` and ```<li>``` tags along with much more.
 
 EA only supports a limited markdown capacity. So adding things like divs and images will not work. However spans and paragraphs do have limited functionality.
-Unfortunately OL types don't function in the noted so having roman numerals or lettered lists is currently not possible.
+Unfortunately OL types don't function in the notes field so having roman numerals or lettered lists is currently not possible.
 
 ### Markdown Comments
 I am slowly adapting EA to use markdown output as a generation mechanism so that I can generate class documentation for API's in a github/bitbucket centric way. The first step, however, was to add a markdown comments section to each element. I do this by creating a taggedvalue for Markdown and MarkdownStyle. Where style is the cdn url of the stylesheet you wish to use when viewing the comments.
