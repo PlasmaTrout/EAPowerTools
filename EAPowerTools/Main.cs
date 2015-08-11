@@ -117,6 +117,11 @@ namespace EAPowerTools
                     mdownControl.LoadFromRepository(Repository);
                     mdownControl.UpdateWebBrowser();
                 }
+
+                if(control != null)
+                {
+                    control.LoadNotes(Repository);
+                }
             }
 
             base.EA_OnContextItemChanged(Repository, GUID, ot);
